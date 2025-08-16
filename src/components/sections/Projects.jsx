@@ -5,7 +5,7 @@ const Projects = () => {
   const projects = [
     {
       title: "VisionCast – Smart Image & Audio Output",
-      image: "bg",
+      image: bg,
       github: "https://github.com/Rokkam-Ganesh/VisionCast-Smart-Image-Audio-Output",
       techStack: ["Lambda"," S3", "Rekognition", "Polly", "DynamoDB"],
       description:
@@ -21,7 +21,7 @@ const Projects = () => {
     },
     {
       title: "Centralized FreeIPA Authentication with Route 53",
-      image: "#",
+      image: bg,
       github: "https://github.com/Rokkam-Ganesh/FreeIPA-S3Backup",
       techStack: ["FreeIPA", "EC2", "Route 53", "RHEL", "AWS"],
       description:
