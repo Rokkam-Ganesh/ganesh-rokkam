@@ -1,10 +1,11 @@
 import React from "react";
+import bg from "../../assets/bg.png";
 
 const Projects = () => {
   const projects = [
     {
       title: "VisionCast – Smart Image & Audio Output",
-      image: "#",
+      image: "bg",
       github: "https://github.com/Rokkam-Ganesh/VisionCast-Smart-Image-Audio-Output",
       techStack: ["Lambda"," S3", "Rekognition", "Polly", "DynamoDB"],
       description:
@@ -12,7 +13,7 @@ const Projects = () => {
     },
     {
       title: "Podman Web Server with S3 Backup",
-      image: "#",
+      image: bg,
       github: "https://github.com/Rokkam-Ganesh/FreeIPA-S3Backup",
       techStack: ["Podman", "S3", "EC2", "RHEL", "Docker", "AWS"],
       description:
