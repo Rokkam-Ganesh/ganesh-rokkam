@@ -1,0 +1,377 @@
+Navbar.jsx:
+
+import React, { useEffect } from "react";
+
+const Navabar = ({ menuOpen, setMenuOpen }) => {
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+  }, [menuOpen]);
+
+  return (
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[100%] z-40 bg-white rounded-lg backdrop-blur-lg border-b border-white/10 shadow-lg px-10 ">
+      <div className="max-w-5xl mx-auto px-4 px-2">
+        <div className="flex justify-between items-center h-16">
+          <a href="#home" className="font-mono  text-xl font-bold">
+            Ganesh <span className="text-blue-500">Rokkam</span>
+          </a>
+
+          <div className="w-7 h-5 relative cursor-pointer z-40 md:hidden" onClick={() => setMenuOpen((prev) => !prev)}>
+            &#9776;
+          </div>
+
+          <div className="hidden font-medium md:flex items-center space-x-8">
+            <a
+              href="#home"
+              className="text-[rgb(26, 20, 20)] hover:text-[rgb(139,104,61)] transition-colors"
+            >
+              {" "}
+              Home{" "}
+            </a>
+            <a
+              href="#skills"
+              className="text-[rgb(26, 20, 20)] hover:text-[rgb(139,104,61)] transition-colors"
+            >
+              {" "}
+              Skills{" "}
+            </a>
+            <a
+              href="#projects"
+              className="text-[rgb(26, 20, 20)] hover:text-[rgb(139,104,61)] transition-colors"
+            >
+              {" "}
+              Projects{" "}
+            </a>
+            <a
+              href="#contact"
+              className="text-[rgb(26, 20, 20)] hover:text-[rgb(139,104,61)] transition-colors"
+            >
+              {" "}
+              Contacts{" "}
+            </a>
+          </div>
+          <div className="rounded-2xl bg-black text-white px-3 py-2 cursor-pointer">Resume</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navabar;
+
+
+Home.jsx:
+
+import React from 'react'
+
+const Home = () => {
+  return (
+    <section id='home' 
+    className='min-h-screen flex items-center justify-center relative -translate-y-20 w-full '
+    >
+        <div 
+        className='text-center z-10 px-3 bg-white mx-3 rounded-2xl backdrop-blur-lg border-b border-white/10 shadow-xl md: py-15 px-10'>
+            <h1 className='text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent'>
+                Hi, I'm Ganesh </h1>
+            
+            <p className='text-lg max-w-3xl mx-auto my-5 text-[rgb(29,108,173)] mb-8 text-justify'> {/* This part is to set width of paragraph*/}
+                A passionate <span className='text-blue-800 font-semibold'>B.Tech Final Year Student</span> with a knack for creating dynamic and responsive web applications. 
+                I love turning ideas into reality through code, and I'm always eager to learn new technologies and improve my skills.
+            </p>
+            <div className='flex justify-center space-x-4'>
+                <a href="#projects" className='bg-blue-600 text-white px-6 py-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-1 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)]'>
+                    View Projects
+                </a>
+                <a href="#contact" className='border-2 border-blue-500 text-blue-500 px-6 py-3 rounded font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_0_10px_rgba(59,130,246,0.2)] hover:bg-blue-500 hover:text-white'>
+                    Contact
+                </a>
+                {/* <a href="#contact" className='bg-blue-600 text-white px-6 py-3 rounded font-medium transition relative overflow-hidden hover: -translate-y-1 hover:shadow-[0_0_10px_rgba(59,130,246,0.5)]'>
+                    Contact
+                </a> */}
+            </div>
+        </div>
+    </section>
+  )
+}
+
+export default Home
+
+
+Education.jsx:
+
+import React from "react";
+
+const Education = () => {
+  return (
+    <section className="min-h-screen flex my-5 items-center justify-center relative -translate-y-20 w-full">
+      <div className="z-10 px-3 bg-white mx-3 rounded-2xl backdrop-blur-lg border-b border-white/10 shadow-xl md: py-15 px-10 w-full max-w-3xl">
+        <h1 className="text-3xl font-bold mb-8 text-blue-600 text-center">
+          Education
+        </h1>
+        <h3>
+          <strong className="text-lg">
+            B.Tech in Computer Science (AI & ML)
+          </strong>
+        </h3>
+        <p className="text-[#555]">Godavari Institute of Engineering and Technology, Rajahmundry</p>
+        <p className="text-[#888]">2022 – 2026</p>
+          <ul className="list-disc ml-8 text-base mt-4">
+            <li>CGPA: 8.79/10</li>
+            <li>
+             <strong>Relevant Coursework</strong> : Data Structures & Algorithms, Operating
+              Systems, Databases, Computer Networks, Machine Learning, Natural
+              Language Processing
+            </li>
+          </ul>
+      </div>
+    </section>
+  );
+};
+
+export default Education;
+
+Skills.jsx:
+
+const Skills = () => {
+  const langs = ["Python", "Java"];
+
+  const aws_services = ["EC2", "RDS", "S3", "Lambda", "LightSail", , "VPC"];
+
+  return (
+    <section
+      id="skills"
+      className="min-h-screen flex items-center justify-center relative w-full "
+    >
+      <div className="z-10 px-3 bg-white mx-3 rounded-2xl backdrop-blur-lg border-b border-white/10 shadow-xl md: py-15 px-10 w-full max-w-3xl"> {/* Adjusted width to max-w-3xl for better responsiveness */}
+        <h2 className="text-3xl font-bold mb-8 text-blue-600 text-center">
+          Skills
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 rounded-xl p-6 bg-white/10">
+          <div className="rounded-xl p-6 ">
+            <h3 className="text-xl font-bold mb-4"> Languages</h3>
+            <div className="flex flex-wrap gap-2">
+              {langs.map((lang, index) => (
+                <span
+                  key={index}
+                  className="bg-blue-400 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-600/5 hover:text-blue-600 transition duration-300"
+                >
+                  {lang}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-xl p-6">
+            <h3 className="text-xl font-bold mb-4"> AWS Services</h3>
+            <div className="flex flex-wrap gap-2">
+              {aws_services.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-blue-400 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-600/5 hover:text-blue-600 transition duration-300"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-xl p-6">
+            <h3 className="text-xl font-bold mb-4"> AWS Services</h3>
+            <div className="flex flex-wrap gap-2">
+              {aws_services.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-blue-400 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-600/5 hover:text-blue-600 transition duration-300"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-xl p-6">
+            <h3 className="text-xl font-bold mb-4"> AWS Services</h3>
+            <div className="flex flex-wrap gap-2">
+              {aws_services.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-blue-400 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-600/5 hover:text-blue-600 transition duration-300"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-xl p-6">
+            <h3 className="text-xl font-bold mb-4"> AWS Services</h3>
+            <div className="flex flex-wrap gap-2">
+              {aws_services.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-blue-400 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-600/5 hover:text-blue-600 transition duration-300"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
+
+
+Projects.jsx:
+
+import React from "react";
+
+const Projects = () => {
+  return (
+    <section
+      id="projects"
+      className="min-h-screen flex items-center justify-center relative -translate-y-20 w-full my-5"
+    >
+      <div className="z-10 px-3 bg-white mx-3 rounded-2xl backdrop-blur-lg border-b border-white/10 shadow-xl md: py-15 px-10 w-full max-w-3xl">
+        <h1 className="text-3xl font-bold mb-8 text-blue-600 text-center">
+          Featured Projects
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="rounded-xl p-6 border border-gray-200 hover:shadow-[0_2px_3px_rgba(34,54,65,0.2)] transition duration-300">
+            <div className="mb-3 rounded-xl overflow-hidden border border-[#e5e5e0] bg-black/5">
+              <img src="#" alt="" className="w-full h-50 object-cover" />
+            </div>
+            <h2 className="text-xl font-extralight mb-4">
+              Podman Wen Server with S3 Backup, Centralized FreeIPA
+              Authentication with Route 53
+            </h2>
+            <div className="flex items-center text-[#9999]">
+            <a href="#" className="mb-3 mx-2"> Github</a>
+            <a href="#" className="mb-3 mx-2"> Github</a>
+            </div>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["Podman", "S3", "Route 53", "RHEL", "Docker"].map(
+                (tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-blue-400 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-600/5 hover:text-blue-600 transition duration-300"
+                  >
+                    {tech}
+                  </span>
+                )
+              )}
+            </div>
+            <p>
+              Running a Podman web server with S3 backup.Setting up Centralized
+              FreeIPA authentication with Route 53 DNS management. This project
+              showcases my ability on multiple technologies for a robust web
+              application and Authentication.
+            </p>
+          </div>
+          <div className="rounded-xl p-6 border border-gray-200 hover:shadow-[0_2px_3px_rgba(34,54,65,0.2)] transition duration-300">
+            <div className="mb-3 rounded-xl overflow-hidden border border-[#e5e5e0] bg-black/5">
+              <img src="#" alt="" className="w-full h-50 object-cover" />
+            </div>
+            <h2 className="text-xl font-extralight mb-4">
+              Podman Wen Server with S3 Backup, Centralized FreeIPA
+              Authentication with Route 53
+            </h2>
+            <div className="flex items-center text-[#9999]">
+            <a href="#" className="mb-3 mx-2"> Github</a>
+            <a href="#" className="mb-3 mx-2"> Github</a>
+            </div>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["Podman", "S3", "Route 53", "RHEL", "Docker"].map(
+                (tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-blue-400 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-600/5 hover:text-blue-600 transition duration-300"
+                  >
+                    {tech}
+                  </span>
+                )
+              )}
+            </div>
+            <p>
+              Running a Podman web server with S3 backup.Setting up Centralized
+              FreeIPA authentication with Route 53 DNS management. This project
+              showcases my ability on multiple technologies for a robust web
+              application and Authentication.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
+
+
+Contact.jsx:
+
+import React from "react";
+
+const Contacts = () => {
+  return (
+    <section
+      id="contact"
+      className="min-h-screen flex items-center justify-center relative -translate-y-20 w-full"
+    >
+      <div className="z-10 px-3 bg-white mx-3 rounded-2xl backdrop-blur-lg border-b border-white/10 shadow-xl md: py-15 px-10 w-full max-w-3xl">
+        <h2 className="text-3xl font-bold mb-8 text-blue-600 text-center">
+          Contact Me
+        </h2>
+        <div className="px-4 w-150 mx-auto  ">
+          <form className="space-y-6">
+            <div className="relative">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                className="w-full bg-blue-600/5 border border-blue-500 rounded px-4 py-3 transition focus:border-blue-500 focus:outline-none"
+                placeholder="Your Name"
+              />
+            </div>
+            <div className="relative">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full bg-blue-600/5 border border-blue-500 rounded px-4 py-3 transition focus:border-blue-500 focus:outline-none"
+                placeholder="example@gmail.com"
+              />
+            </div>
+            <div className="relative">
+              <textarea
+                type="message"
+                id="message"
+                name="message"
+                required
+                rows={4}
+                className="w-full bg-blue-600/5 border border-blue-500 rounded px-4 py-3 transition focus:border-blue-500 focus:outline-none"
+                placeholder="Enter your message"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white font-semibold py-3 rounded hover:bg-blue-700 transition-colors"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div className="mt-10 flex justify-between items-center">
+          <div className="mb-6 font-semibold text-left flex justify-between items-center px-4 space-x-4">
+            <p className="text-lg ">Social Accounts:</p>
+            <a className="hover:text-[#5555]" href="#">Github</a>
+            <a className="hover:text-[#5555]" href="#">Lin</a>
+            <a className="hover:text-[#5555]" href="#">Creadly</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+export default Contacts;

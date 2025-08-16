@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f2f1;
+}
+
+
+.arvo-bold {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sub{
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.matter {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
